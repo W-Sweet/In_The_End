@@ -12,6 +12,15 @@ public class ExampleCommand extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
   private final ExampleSubsystem m_subsystem;
 
+
+
+
+
+
+I EXIST 
+
+
+
   /**
    * Creates a new ExampleCommand.
    *
