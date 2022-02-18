@@ -1,7 +1,3 @@
-// Copyright (c) FIRST and other WPILib contributors.
-// Open Source Software; you can modify and/or share it under the terms of
-// the WPILib BSD license file in the root directory of this project.
-
 package frc.robot;
 
 /**
@@ -12,4 +8,20 @@ package frc.robot;
  * <p>It is advised to statically import this class (or one of its inner classes) wherever the
  * constants are needed, to reduce verbosity.
  */
-public final class Constants {}
+public final class Constants {
+    public static final int leftBack = 7;
+    public static final int leftFront = 5;
+    public static final int rightBack = 8;
+    public static final int rightFront = 6;
+    public static final int XboxLeftY = 1;
+    public static final int XboxLeftX = 0;
+    public static final double DriveTime = 1.0;
+    public static final double DriveTime2 = 5.0;
+    public static final double AutoSpeed = 0.1;
+    public static final double speed = 0.789;
+	public static final int JoystickButton = 0;
+    public static final double drivePoint = 1.5;
+    public static final int rangeFinder = 1;
+    public static final int intakeMotor = 4; 
+
+}
