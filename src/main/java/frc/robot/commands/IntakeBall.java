@@ -1,23 +1,25 @@
 package frc.robot.commands;
-import edu.wpi.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
 import frc.robot.subsystems.Intake;
-
+import frc.robot.commands.IntakeBall;
 public class IntakeBall extends CommandBase {
-    Intake intake;
-
+    private final Intake intake;
+    
     public IntakeBall(Intake i) {
+        
         intake = i;
         addRequirements(intake);
     }
 
-@Override
-public void initalize() {}
+    @Override
+    public void initialize() {}
+  
 
 
 @Override
 public void execute(){
-    intake.IntakeBall(Constants.Speed);
+    intake.intakeBall(Constants.speed);
 }
 
 @Override

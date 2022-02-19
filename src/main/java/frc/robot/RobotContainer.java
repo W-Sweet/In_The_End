@@ -13,10 +13,9 @@ import frc.robot.commands.AutonomousOne;
 import frc.robot.commands.AutonomousTwo;
 import frc.robot.commands.IntakeBall;
 import frc.robot.subsystems.Intake;
-import edu.wpi.cscore.UsbCamera;
-import edu.wpi.first.cameraserver.CameraServer;
-import edu.wpi.first.wpilibj.GenericHID;
-
+import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
+import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
+import edu.wpi.first.wpilibj.XboxController;
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -50,8 +49,6 @@ public class RobotContainer {
     chooser.setDefaultOption("Auto1", Auto1Sec);
     chooser.addOption("Auto2", Auto2);
     SmartDashboard.putData("Auto", chooser);
-    UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
-    camera.setResolution(Constants.CameraX, Constants.CameraY);
     configureButtonBindings();
   }
 
@@ -62,8 +59,7 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    JoystickButton runIntake = new JoystickButton(driverJoystick, XboxController.Button.kA.value);
-    runIntake.whileHeld(() -> intake.intakeBall(Constants.INTAKE_SPEED)).whenReleased(() -> intake.intakeBall(0));
+    //runIntake.whileHeld(() -> intake.intakeBall(Constants.INTAKE_SPEED)).whenReleased(() -> intake.intakeBall(0));
 
   }
 

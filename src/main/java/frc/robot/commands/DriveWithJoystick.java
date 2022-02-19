@@ -19,13 +19,8 @@ private final DriveTrain driveTrain;
   @Override
   public void execute() {
     double trying = Constants.speed;
-    /*if(1>0){
-      trying+=.5;
-    }
-    else{
-      trying-=1;
-    }*/
     driveTrain.driveWithJoystick(RobotContainer.driverJoystick, trying);
+    
   }
 
   @Override
