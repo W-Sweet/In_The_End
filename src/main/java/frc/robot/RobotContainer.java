@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.XboxController;
 // import frc.robot.commands.DriveForwardTimed;
 import frc.robot.subsystems.DriveTrain;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.DriveWithJoystick;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 //import frc.robot.commands.DriveToDistance;
@@ -13,8 +14,6 @@ import frc.robot.commands.AutonomousOne;
 import frc.robot.commands.AutonomousTwo;
 import frc.robot.commands.IntakeBall;
 import frc.robot.subsystems.Intake;
-import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
-import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
 import edu.wpi.first.wpilibj.XboxController;
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -29,10 +28,9 @@ public class RobotContainer {
   private final AutonomousOne Auto1Sec;
   private final AutonomousTwo Auto2;
   private final Intake intake = new Intake();
-  //private final DriveForwardTimed driveForwardTimed;
   public static XboxController driverJoystick;
   SendableChooser<Command> chooser = new SendableChooser<>();
- // private final DriveToDistance driveToDistance;
+
 
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
@@ -45,7 +43,7 @@ public class RobotContainer {
    // driveForwardTimed = new DriveForwardTimed(m_DriveTrain);
     Auto1Sec = new AutonomousOne(m_DriveTrain);
     Auto2 = new AutonomousTwo(m_DriveTrain);
-
+   driverJoystick = new XboxController(Constants.JoystickButton);
     chooser.setDefaultOption("Auto1", Auto1Sec);
     chooser.addOption("Auto2", Auto2);
     SmartDashboard.putData("Auto", chooser);
@@ -59,8 +57,9 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    //runIntake.whileHeld(() -> intake.intakeBall(Constants.INTAKE_SPEED)).whenReleased(() -> intake.intakeBall(0));
-
+    JoystickButton runIntake = new JoystickButton(driverJoystick, XboxController.Button.kA.value);
+    runIntake.whileHeld(() -> intake.intakeBall(Constants.speed)).whenReleased(() -> intake.intakeBall(0));
+  
   }
 
   /**
