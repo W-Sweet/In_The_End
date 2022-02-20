@@ -57,7 +57,7 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    JoystickButton runIntake = new JoystickButton(driverJoystick, XboxController.Button.kA.value);
+    JoystickButton runIntake = new JoystickButton(driverJoystick, XboxController.Button.kLeftBumper.value);
     runIntake.whileHeld(() -> intake.intakeBall(Constants.speed)).whenReleased(() -> intake.intakeBall(0));
   
   }
