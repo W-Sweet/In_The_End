@@ -58,7 +58,7 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
     JoystickButton runIntake = new JoystickButton(driverJoystick, XboxController.Button.kLeftBumper.value);
-    runIntake.whileHeld(() -> intake.intakeBall(Constants.speed)).whenReleased(() -> intake.intakeBall(0));
+   // runIntake.whileHeld(() -> intake.intakeBall(Constants.speed)).whenReleased(() -> intake.intakeBall(0));
   
   }
 
