@@ -22,7 +22,7 @@ public class DriveTrain extends SubsystemBase {
   MotorControllerGroup rightMotors = new MotorControllerGroup(rightFront, rightBack);
   drive = new DifferentialDrive(leftMotors, rightMotors);
   //AnalogInput rangeFinder = new AnalogInput(Constants.rangeFinder);
-  
+   
 
 
   
@@ -55,8 +55,3 @@ public class DriveTrain extends SubsystemBase {
     drive.stopMotor();
   }
 }
-
-
-
-
-// hello I'm here
