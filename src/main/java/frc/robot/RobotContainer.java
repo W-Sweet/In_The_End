@@ -29,6 +29,7 @@ public class RobotContainer {
   private final AutonomousTwo Auto2;
   private final Intake intake = new Intake();
   public static XboxController driverJoystick;
+  public static final JoystickButton buttonA = new JoystickButton(driverJoystick, 1);
   SendableChooser<Command> chooser = new SendableChooser<>();
 
 
@@ -57,9 +58,9 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    JoystickButton runIntake = new JoystickButton(driverJoystick, XboxController.Button.kLeftBumper.value);
+   // JoystickButton runIntake = new JoystickButton(driverJoystick, XboxController.Button.kLeftBumper.value);
    // runIntake.whileHeld(() -> intake.intakeBall(Constants.speed)).whenReleased(() -> intake.intakeBall(0));
-  
+   buttonA.whenPressed(new runIntake(speed));
   }
 
   /**
