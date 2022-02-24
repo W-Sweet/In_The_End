@@ -27,7 +27,7 @@ public class RobotContainer {
   private final DriveWithJoystick driving = new DriveWithJoystick(m_DriveTrain);
   private final AutonomousOne Auto1Sec;
   private final AutonomousTwo Auto2;
-  private final Intake intake = new Intake();
+  private final Intake intake = new Intake(); 
   public static XboxController driverJoystick = new XboxController(Constants.XboxPort);
   SendableChooser<Command> chooser = new SendableChooser<>();
 
@@ -49,7 +49,7 @@ public class RobotContainer {
     SmartDashboard.putData("Auto", chooser);
     configureButtonBindings();
   }
-
+  
   /**
    * Use this method to define your button->command mappings. Buttons can be created by
    * instantiating a {@link GenericHID} or one of its subclasses ({@link
